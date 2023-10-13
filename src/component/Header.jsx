@@ -16,8 +16,7 @@ const HeaderStyle = styled.div`
 
 const ImageBox = styled.div`
   width: 212px;
-  height: 24px;
-  margin-top: 5px;
+  height: 26px;
 `;
 
 const Box = styled.div`
@@ -30,12 +29,17 @@ const Box = styled.div`
 `;
 
 const ImageLink = styled.a`
+  display: flex;
+  margin-left: 20px;
   text-decoration: none;
   color: black;
+  background-color: ${(props) => props.Mg};
 `;
 
 const Image = styled.img`
   margin-right: 10px;
+  width: 117px;
+  height: 26px;
 `;
 
 const BoxInBox = styled.div`
@@ -93,6 +97,7 @@ const Modal = styled.div`
   background-color: white;
   padding: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
   display: ${(props) => (props.showModal ? 'block' : 'none')};
 `;
 
@@ -130,7 +135,7 @@ function Header() {
   return (
     <HeaderStyle>
       <ImageBox>
-        <ImageLink href='https://oasis.sc/' target='_blank'>
+        <ImageLink href='https://oasis.sc/' target='_blank' Mg={'none'}>
           <Image src='./img/OASIS_logo.svg' />
         </ImageLink>
       </ImageBox>
