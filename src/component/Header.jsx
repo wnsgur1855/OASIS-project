@@ -7,7 +7,7 @@ const HeaderStyle = styled.div`
   position: relative;
   justify-content: center;
   width: 100vw;
-  height: 76px;
+  height: 60px;
   background-color: white;
   opacity: 1;
   align-items: center;
