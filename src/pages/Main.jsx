@@ -1,6 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
+import YouTube from 'react-youtube';
+
+const MainBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+`;
 
 const MainStyle = styled.div`
   background-image: url(https://oasis.sc/wp-content/uploads/2023/08/OASIS_bg.jpg);
@@ -9,8 +20,10 @@ const MainStyle = styled.div`
   background-size: cover;
   display: flex;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
   height: 1376px;
+  overflow-x: hidden;
+  overflow-y: hidden;
 `;
 
 const MainStyle2 = styled.div`
@@ -59,6 +72,12 @@ const OasisLogo = styled.img`
   color: black;
 `;
 
+const YoutubeDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 function Main() {
   const [position, setPosition] = useState(0);
 
@@ -74,8 +93,16 @@ function Main() {
 
   const translateY = position / 2;
 
+  const videoOpts = {
+    width: '1250',
+    height: '703',
+    playerVars: {
+      autoplay: 1,
+      modestbranding: 1,
+    },
+  };
   return (
-    <>
+    <MainBox>
       <MainStyle>
         <Box1 style={{ transform: `translateY(${translateY}px)` }}>
           <MainStyle2>
@@ -93,9 +120,10 @@ function Main() {
           </MainStyle2>
         </Box1>
       </MainStyle>
-      <MainStyle></MainStyle>
-      <MainStyle></MainStyle>
-    </>
+      <YoutubeDiv>
+        <YouTube videoId={'C_SHJe_v45U'} opts={videoOpts} />
+      </YoutubeDiv>
+    </MainBox>
   );
 }
 

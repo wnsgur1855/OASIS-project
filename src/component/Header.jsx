@@ -6,13 +6,14 @@ const HeaderStyle = styled.div`
   display: flex;
   position: fixed;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
   height: 60px;
   background-color: white;
   opacity: 1;
   align-items: center;
   padding: 0 20px;
   z-index: 999;
+  border: 1px solid black;
 `;
 
 const ImageBox = styled.div`
