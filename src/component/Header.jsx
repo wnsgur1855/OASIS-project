@@ -4,7 +4,7 @@ import { BiChevronDown } from 'react-icons/bi';
 
 const HeaderStyle = styled.div`
   display: flex;
-  position: relative;
+  position: fixed;
   justify-content: center;
   width: 100vw;
   height: 60px;
@@ -12,6 +12,7 @@ const HeaderStyle = styled.div`
   opacity: 1;
   align-items: center;
   padding: 0 20px;
+  z-index: 999;
 `;
 
 const ImageBox = styled.div`
