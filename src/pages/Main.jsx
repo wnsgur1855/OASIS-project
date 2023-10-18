@@ -2,13 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import YouTube from 'react-youtube';
+import Anchor1 from '../component/Anchor1';
 
 const MainBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 50px;
+  gap: ${(props) => props.gap};
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
   overflow-x: hidden;
   overflow-y: hidden;
 `;
@@ -76,6 +79,14 @@ const YoutubeDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
+`;
+
+const MainTextStyle = styled.h2`
+  display: flex;
+  justify-content: center;
+  width: 1105px;
+  height: 1px;
 `;
 
 function Main() {
@@ -121,8 +132,15 @@ function Main() {
         </Box1>
       </MainStyle>
       <YoutubeDiv>
-        <YouTube videoId={'C_SHJe_v45U'} opts={videoOpts} />
+        <YouTube videoId={'3gMAEZCOFtE'} opts={videoOpts} />
       </YoutubeDiv>
+      <MainBox width={'1260'} height={'300px'}>
+        <MainTextStyle>오가노이드 기반 플랫폼'OASIS'는</MainTextStyle>
+        <MainTextStyle>
+          다양한 연구를 위한 약물·효능 평가 서비스 및 솔루션을 제공합니다
+        </MainTextStyle>
+      </MainBox>
+      <Anchor1 />
     </MainBox>
   );
 }
