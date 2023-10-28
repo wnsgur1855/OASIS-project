@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { BiChevronDown } from 'react-icons/bi';
+import { useNavigate } from 'react-router-dom/dist';
 
 const HeaderStyle = styled.div`
   display: flex;
@@ -132,6 +133,10 @@ const AtagAnimation = styled.a`
 
 function Header() {
   const [isFull, setIsFull] = useState(false);
+  const navigate = useNavigate();
+  const goToPage = () => {
+    navigate()
+  }
 
   // 게이지 채우기 함수
   const fillGaze = () => {
@@ -174,13 +179,13 @@ function Header() {
         </ImageLink>
       </ImageBox>
       <Box>
-        <ImageLink href='https://oasis.sc/contact-us/' target='_blank'>
+        <div onClick={()=>navigate('/Contact')} >
           <BoxInBox width={'82px'}>Contact Us</BoxInBox>
-        </ImageLink>
-        <ImageLink href='https://oasis.sc/spatial-day/' target='_blank'>
+        </div>
+        <div onClick={()=>navigate('/SpacialDay')} >
           <BoxInBox width={'84px'}>Spatial Day</BoxInBox>
-        </ImageLink>
-        <ImageLink href='https://oasis.sc/research-product/' target='_blank'>
+        </div>
+        <div onClick={()=> navigate('/OrganoEZ')}>
           <BoxInBox onMouseEnter={handleResearchProductMouseEnter}>
             <TextStyle onClick={fillGaze}>Research Product</TextStyle>
             <IconStyle />
@@ -195,8 +200,8 @@ function Header() {
               </ModalBox>
             </Modal2>
           </BoxInBox>
-        </ImageLink>
-        <ImageLink href='https://oasis.sc/organoid-service/' target='_blank'>
+        </div>
+        <div onClick={()=>navigate('/ODSEL')}>
           <BoxInBox onMouseEnter={handleOrganoidServiceMouseEnter}>
             <TextStyle width={'190px'} onClick={fillGaze}>
               Organoid Service
@@ -222,7 +227,7 @@ function Header() {
               </ModalBox>
             </Modal>
           </BoxInBox>
-        </ImageLink>
+        </div>
       </Box>
     </HeaderStyle>
   );
