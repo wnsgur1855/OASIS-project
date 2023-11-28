@@ -9,7 +9,7 @@ import Contact from '../pages/Contact';
 const Router = () => {
   return (
     <BrowserRouter>
-      <Header />
+      {/* <Header /> */}
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='ODSEL' element={<ODISEL />} />
